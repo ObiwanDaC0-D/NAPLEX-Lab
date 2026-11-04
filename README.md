@@ -2,6 +2,11 @@
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
+## CI compatibility repair
+- GitHub Actions logs identified a real failure: Playwright 1.56.1 could not install Chromium dependencies on the ubuntu26.04 runner selected by `ubuntu-latest`.
+- Pinned the test job to `ubuntu-24.04` to use a supported runner image; subsequent CI outcomes must be checked separately.
+- Added browser regression coverage for the required answer-before-advance behavior in Clinical Lab and keyboard operation at mobile viewport width.
+
 ## Version 10 follow-up — Backup integrity and test readiness
 - Added schema validation for imported study backups, including practice history, scheduled reviews, curriculum activity, and study-time constraints.
 - Invalid backup files are rejected before the confirmation step; existing local progress is not replaced.
