@@ -1,8 +1,16 @@
-# NAPLEX-Lab — Version 9.0
+# NAPLEX-Lab — Version 10.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 9 — Personalized Learning Dashboard
+## New in Version 10 — Quality and Reliability
+- Chromium browser smoke tests for landing/navigation, curriculum interactions, practice answers, memory queue, clinical reasoning and generated math scenarios.
+- GitHub Actions installs Playwright and Chromium, then runs unit and browser tests on pushes and pull requests.
+- Disabled submission controls before a selection or after an answer is recorded; accessible pressed state for practice choices; current-page navigation semantics.
+- Safer review-question routing and backup-import handling for empty file selections.
+- Improved mobile navigation, 44px touch targets, focus-visible styling and reduced-motion support.
+- Browser tests are committed and configured, but must pass in CI before the release is considered verified.
+
+## Preserved Version 9 — Personalized Learning Dashboard
 - Fourteen-day activity visualization combining recorded question, math, clinical-case and curriculum attempts.
 - Connected knowledge-map cards in Performance Analytics with direct links to study each concept.
 - Curriculum concept spaced-review scheduling (1, 3, 7, 14, 30 days after successive correct checks; approximately one hour after an incorrect check).
