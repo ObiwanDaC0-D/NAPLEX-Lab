@@ -12,6 +12,7 @@ export function validateBackup(payload){
  for(const k of ["mathAttempts","clinicalAttempts","curriculumAttempts"]){if(d[k]!==undefined&&(!safeList(d[k])||!d[k].every(x=>isRecord(x)&&typeof x.correct==="boolean"&&Number.isFinite(x.at))))return {ok:false,error:"Invalid "+k+"."}}
  if(d.curriculumCompleted!==undefined&&(!safeList(d.curriculumCompleted)||!d.curriculumCompleted.every(x=>typeof x==="string")))return {ok:false,error:"Invalid curriculum completion data."};
  if(d.conceptReviews!==undefined){if(!isRecord(d.conceptReviews))return {ok:false,error:"Invalid concept reviews."};for(const r of Object.values(d.conceptReviews))if(!isRecord(r)||!Number.isFinite(r.due)||!Number.isFinite(r.interval)||!Number.isFinite(r.streak))return {ok:false,error:"Invalid concept review entry."}}
+ if(d.practiceSessions!==undefined){if(!safeList(d.practiceSessions)||!d.practiceSessions.every(x=>isRecord(x)&&Number.isFinite(x.finishedAt)&&Number.isInteger(x.count)&&Number.isInteger(x.answered)&&Number.isInteger(x.correct)&&x.correct<=x.answered&&x.answered<=x.count&&isRecord(x.byDomain)))return {ok:false,error:"Invalid practice session history."}}
  if(d.studyMinutes!==undefined&&(!Number.isFinite(d.studyMinutes)||d.studyMinutes<10||d.studyMinutes>600))return {ok:false,error:"Invalid daily study target."};
  if(d.examDate!==undefined&&typeof d.examDate!=="string")return {ok:false,error:"Invalid exam date."};
  return {ok:true,data:d};
