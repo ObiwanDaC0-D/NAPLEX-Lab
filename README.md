@@ -1,8 +1,16 @@
-# NAPLEX-Lab — Version 3.0
+# NAPLEX-Lab — Version 4.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 3 — Calculations Laboratory
+## New in Version 4 — Adaptive Calculation Mastery
+- Optional adaptive practice selects the next existing question using a transparent, recent-accuracy and practice-count heuristic.
+- Foundation, Application and Challenge labels summarize recent answer patterns; they do not yet change problem complexity.
+- Interactive dimensional-analysis unit builder with four guided conversion-factor paths and immediate feedback.
+- Practice attempts record whether a hint was used; historical attempts remain compatible.
+- Automated tests for practice selection, levels and dimensional-analysis paths.
+- No claims of validated psychometric mastery or examination-score prediction.
+
+## Preserved Version 3 — Calculations Laboratory
 - 11 pure, testable mathematical models: dilution, dose-to-volume, weight-based arithmetic, infusion pump rate, gravity drip rate, percent w/v, alligation, half-life, conceptual loading dose, absolute risk reduction and number needed to treat.
 - Guided input forms with dimensional-analysis steps, units, assumptions, and explicit invalid-input handling.
 - 12 original arithmetic exercises with hints, answer checking and worked explanations.
@@ -39,6 +47,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/data.js`: introductory lessons, questions and calculation models
 - `src/drugs.js`: structured, explicitly unverified educational medication concepts
 - `src/math-lab.js`: pure mathematical models and guided exercise dataset
+- `src/adaptive-math.js`: adaptive heuristics and unit-builder exercises
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
