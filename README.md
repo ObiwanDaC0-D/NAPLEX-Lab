@@ -1,8 +1,15 @@
-# NAPLEX-Lab — Version 5.0
+# NAPLEX-Lab — Version 6.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 5 — Adaptive Problem Generation
+## New in Version 6 — Clinical Reasoning Laboratory
+- Six fictional, two-decision clinical reasoning cases: discharge medication reconciliation, changing renal function, anticoagulant duplication, allergy assessment, teach-back, and systems-based quality improvement.
+- Sequential choices with explanations and case-level performance tracking in localStorage.
+- Twelve original case-derived multiple-choice questions added to mixed practice, missed-question review and review scheduling.
+- Validation tests for case structures, question IDs, and incorrect-answer feedback.
+- All clinical content explicitly marked Review Needed: no independent pharmacist review or claim-by-claim guideline verification. Cases teach broad safety principles and do not offer patient-specific treatment or dosing.
+
+## Preserved Version 5 — Adaptive Problem Generation
 - Reproducible numerical scenario generation for all 11 calculation models at Foundation, Application and Challenge levels (two numerical configurations per topic/level).
 - Switch between fixed practice exercises and generated scenarios; the existing adaptive topic selector remains optional.
 - Difficulty level for generated scenarios follows recent topic-specific correctness and hint use.
@@ -57,6 +64,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/math-lab.js`: pure mathematical models and guided exercise dataset
 - `src/adaptive-math.js`: adaptive heuristics and unit-builder exercises
 - `src/scenario-generator.js`: deterministic generated numerical scenarios and remediation
+- `src/clinical-cases.js`: original fictional clinical cases and practice questions
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
