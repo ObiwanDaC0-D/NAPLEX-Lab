@@ -1,43 +1,46 @@
-# NAPLEX-Lab — Version 1.0
+# NAPLEX-Lab — Version 2.0
 
-A local-first, interactive pharmacy learning application inspired by Wellness-Lab and Budhism-Psychology.
+A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## Working features
-- Responsive midnight-blue application, Explore default landing page, eleven navigable sections.
-- Six introductory expandable pharmacy lessons spanning five high-level NAPLEX domains.
-- Eight original multiple-choice practice questions with feedback, error review and local performance history.
-- Five functional calculation tools: half-life, absolute risk reduction, number needed to treat, infusion rate and illustrative Cockcroft–Gault.
-- Fictional medication reconciliation reasoning exercise.
-- Local progress tracking, heuristic review scheduling, study-date settings and domain-level accuracy analytics.
-- JSON backup/import, official reference links and automated basic validation tests.
+## New in Version 2 — Drug Atlas
+- 12 structured educational medication concepts covering cardiovascular care, anticoagulation, diabetes, psychiatry, infectious diseases, pulmonology and gastroenterology.
+- Search by generic name, example brand, therapeutic class or indication.
+- Therapeutic-area filtering, expandable mechanisms, safety/counseling explanations and comparison of up to three medications.
+- Visible **Review Needed** status on every entry. No entry is independently clinically verified; dose tables are deliberately withheld.
+- Direct links to FDA Drugs@FDA and DailyMed portals for manual reference checking.
 
-## Known limitations
-This is a foundational release, not the complete master specification. A comprehensive verified competency map, pharmacist-reviewed medication monographs, full clinical case engine, large question bank, adaptive tutor and full-length examination simulator are **not implemented**. Drug Atlas and Exam Simulator clearly communicate this status. The top-level blueprint is provisional pending documented re-verification for the intended exam date. Educational clinical summaries are not independently pharmacist-reviewed and must not guide patient care. Practice accuracy is not an official NAPLEX score or passing probability.
+## Preserved Version 1 features
+- Explore default landing page, responsive dark navigation, six expandable introductory lessons.
+- Eight original practice questions, answer feedback and error review.
+- Five functional educational calculators.
+- One fictional medication reconciliation exercise.
+- Local progress, heuristic review scheduling, study settings, analytics and JSON backup/import.
 
-## Running
-Use a static HTTP server (ES modules do not reliably run from file://):
+## Important clinical limitations
+**This is educational software, not a drug reference for patient care.** Medication content is original educational synthesis, not pharmacist-reviewed or checked claim-by-claim against current product-specific labeling. Uses and safety lists are illustrative and incomplete. Do not infer dosing, substitution, or patient-specific recommendations. The high-level NAPLEX competency map still requires documented confirmation against the applicable NABP outline. The question bank is too small for a credible 225-question simulation; no official scoring or passing probability is presented.
 
-```bash
-python3 -m http.server 8000
-```
+## Run and test
+Use Node 22+ for tests: `npm test`. To run locally: `python3 -m http.server 8000`, then visit http://localhost:8000.
 
-Visit http://localhost:8000. Run tests with `npm test` using Node 22 or newer.
+## Deploy
+In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **main**, **/(root)**.
 
-## GitHub Pages
-In **Settings → Pages**, select **Deploy from a branch**, branch **main**, folder **/(root)**.
-
-## Architecture
-- `index.html`: application shell
-- `styles.css`: responsive design and accessible controls
-- `src/data.js`: learning content, questions, calculation templates, high-level domains
-- `src/app.js`: navigation, assessments, calculators, persistence, backups and analytics
-- `tests/validation.test.mjs`: content integrity and numerical regression tests
-- `.github/workflows/tests.yml`: automated Node tests
+## Files
+- `index.html` and `styles.css`: application shell and design
+- `src/app.js`: navigation, learning tools and Drug Atlas interface
+- `src/data.js`: introductory lessons, questions and calculation models
+- `src/drugs.js`: structured, explicitly unverified educational medication concepts
+- `tests/`: numerical and content-integrity tests
+- `.github/workflows/tests.yml`: Node test workflow
 
 ## Privacy
-Learning history uses unencrypted browser localStorage. No cross-device synchronization. JSON backups are unencrypted. Do not enter real patient information.
+Progress is in unencrypted localStorage and does not sync across devices. JSON backups are unencrypted. Do not enter real patient information.
 
-## Priorities for v2
-Document and verify NABP subcompetencies; establish a dated clinical source registry and pharmacist-review workflow; expand validated question/calculation coverage; build sourced medication monographs; strengthen adaptive retrieval and clinical cases.
+## Next priorities
+1. Document official NABP subcompetencies and content-version dates.
+2. Add source-specific citations and clinical review records for each drug claim.
+3. Expand validated calculations and original questions.
+4. Build interactive drug-class sorting and stronger adaptive memory practice.
+5. Add case simulations and a full-length exam only when reviewed content is sufficient.
 
-Not affiliated with NABP. Educational use only.
+Not affiliated with NABP.
