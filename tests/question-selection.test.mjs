@@ -1,0 +1,4 @@
+import test from "node:test";import assert from "node:assert/strict";import {missedQuestionIds,selectQuestions,safeQuestionIndex} from "../src/question-selection.js";
+const pool=[{id:"a",lesson:"one"},{id:"b",lesson:"two"},{id:"c",lesson:"one"}];
+test("missed practice filters on most recent attempt, not lifetime mistakes",()=>{const attempts=[{id:"a",correct:false},{id:"b",correct:true},{id:"a",correct:true},{id:"c",correct:false}];assert.deepEqual([...missedQuestionIds(attempts)],["c"]);assert.deepEqual(selectQuestions(pool,"errors",attempts).map(x=>x.id),["c"])});
+test("lesson filtering and safe index handle changing pool sizes",()=>{assert.deepEqual(selectQuestions(pool,"lesson:one").map(x=>x.id),["a","c"]);assert.equal(safeQuestionIndex(8,2),1);assert.equal(safeQuestionIndex(-3,2),0);assert.equal(safeQuestionIndex(0,0),0)});
