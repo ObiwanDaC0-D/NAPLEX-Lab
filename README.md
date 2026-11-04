@@ -1,6 +1,14 @@
-# NAPLEX-Lab — Version 11.0
+# NAPLEX-Lab — Version 12.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
+
+## Version 12 — Clinical Evidence Registry
+- Added an explicit review-status registry for all curriculum modules, Drug Atlas summaries and Version 11 questions.
+- Clinical evidence registry in Pharmacy Library now links to reference portals while clearly identifying that no individual claims have been verified.
+- Settings & References includes a transparent evidence audit with registered, reviewed and pending counts.
+- Added unit and browser regression tests. No clinical review or claim-level sourcing is implied by a link to an official reference portal.
+- Legacy questions and clinical cases are not yet individually catalogued in this registry; they remain unverified and are not included in its counts.
+- The application is still educational only and not appropriate for patient-care decisions.
 
 ## Version 11 Optimization Pass
 - Reviewed the existing application architecture, practice engine, local storage and CI.
