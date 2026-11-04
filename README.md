@@ -1,8 +1,16 @@
-# NAPLEX-Lab — Version 2.0
+# NAPLEX-Lab — Version 3.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 2 — Drug Atlas
+## New in Version 3 — Calculations Laboratory
+- 11 pure, testable mathematical models: dilution, dose-to-volume, weight-based arithmetic, infusion pump rate, gravity drip rate, percent w/v, alligation, half-life, conceptual loading dose, absolute risk reduction and number needed to treat.
+- Guided input forms with dimensional-analysis steps, units, assumptions, and explicit invalid-input handling.
+- 12 original arithmetic exercises with hints, answer checking and worked explanations.
+- Local calculation-attempt history and model-level performance analytics.
+- Additional Node tests for arithmetic accuracy, model constraints, educational notes and exercise consistency.
+- Educational models only; no patient-specific dose guidance.
+
+## Preserved Version 2 — Drug Atlas
 - 12 structured educational medication concepts covering cardiovascular care, anticoagulation, diabetes, psychiatry, infectious diseases, pulmonology and gastroenterology.
 - Search by generic name, example brand, therapeutic class or indication.
 - Therapeutic-area filtering, expandable mechanisms, safety/counseling explanations and comparison of up to three medications.
@@ -30,6 +38,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/app.js`: navigation, learning tools and Drug Atlas interface
 - `src/data.js`: introductory lessons, questions and calculation models
 - `src/drugs.js`: structured, explicitly unverified educational medication concepts
+- `src/math-lab.js`: pure mathematical models and guided exercise dataset
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
@@ -39,7 +48,7 @@ Progress is in unencrypted localStorage and does not sync across devices. JSON b
 ## Next priorities
 1. Document official NABP subcompetencies and content-version dates.
 2. Add source-specific citations and clinical review records for each drug claim.
-3. Expand validated calculations and original questions.
+3. Expand reviewed original questions, with more varied calculation cases and difficulty progression.
 4. Build interactive drug-class sorting and stronger adaptive memory practice.
 5. Add case simulations and a full-length exam only when reviewed content is sufficient.
 
