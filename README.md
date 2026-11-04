@@ -1,8 +1,16 @@
-# NAPLEX-Lab — Version 7.0
+# NAPLEX-Lab — Version 8.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 7 — Pharmacotherapy Learning Pathways
+## New in Version 8 — Connected Learning and Review Registry
+- Four Pharmacy Library views: Explore Modules, Knowledge Connections, Review Registry and Suggested Practice.
+- Explicit cross-links among curriculum concepts, related Drug Atlas entries, and monitoring themes.
+- Source-review registry for all ten curriculum modules; all are Review Needed with no assigned reviewer or verification date.
+- Suggested practice ordering based on incomplete modules and recent incorrect knowledge checks. This is a heuristic, not validated mastery estimation.
+- Additional tests validate graph references, review status, and practice prioritization.
+- No new clinical claims are marked as verified; reference portals alone do not establish claim-level provenance.
+
+## Preserved Version 7 — Pharmacotherapy Learning Pathways
 - Five therapeutic learning pathways (cardiovascular, antithrombotic, diabetes, antimicrobials, and neuropsychiatric medication concepts) with ten expandable modules.
 - Mechanism, safety/monitoring and class-comparison sections, plus one scored knowledge check per module.
 - Search and pathway filtering, completion markers, local knowledge-check history and integration of ten new questions into the practice bank.
@@ -73,6 +81,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/scenario-generator.js`: deterministic generated numerical scenarios and remediation
 - `src/clinical-cases.js`: original fictional clinical cases and practice questions
 - `src/curriculum.js`: structured pharmacotherapy pathways and original knowledge checks
+- `src/knowledge-map.js`: cross-topic links, review registry, and practice prioritization
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
