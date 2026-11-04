@@ -1,8 +1,15 @@
-# NAPLEX-Lab — Version 6.0
+# NAPLEX-Lab — Version 7.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 6 — Clinical Reasoning Laboratory
+## New in Version 7 — Pharmacotherapy Learning Pathways
+- Five therapeutic learning pathways (cardiovascular, antithrombotic, diabetes, antimicrobials, and neuropsychiatric medication concepts) with ten expandable modules.
+- Mechanism, safety/monitoring and class-comparison sections, plus one scored knowledge check per module.
+- Search and pathway filtering, completion markers, local knowledge-check history and integration of ten new questions into the practice bank.
+- Original curriculum content is preliminary and marked Review Needed; it is not a substitute for dated prescribing information, current guidelines or pharmacist review.
+- Curriculum structure and practice-question integrity tests added.
+
+## Preserved Version 6 — Clinical Reasoning Laboratory
 - Six fictional, two-decision clinical reasoning cases: discharge medication reconciliation, changing renal function, anticoagulant duplication, allergy assessment, teach-back, and systems-based quality improvement.
 - Sequential choices with explanations and case-level performance tracking in localStorage.
 - Twelve original case-derived multiple-choice questions added to mixed practice, missed-question review and review scheduling.
@@ -65,6 +72,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/adaptive-math.js`: adaptive heuristics and unit-builder exercises
 - `src/scenario-generator.js`: deterministic generated numerical scenarios and remediation
 - `src/clinical-cases.js`: original fictional clinical cases and practice questions
+- `src/curriculum.js`: structured pharmacotherapy pathways and original knowledge checks
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
