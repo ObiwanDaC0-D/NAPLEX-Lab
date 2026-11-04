@@ -1,0 +1,13 @@
+// Transparent practice-selection heuristics; not validated psychometrics.
+import {topics,exercises} from "./math-lab.js";
+export const levels=[{id:"foundation",label:"Foundation"},{id:"application",label:"Application"},{id:"challenge",label:"Challenge"}];
+export function skillStats(attempts=[]){return topics.map(t=>{const a=attempts.filter(x=>x.topic===t.id),recent=a.slice(-5),correct=recent.filter(x=>x.correct).length;return {id:t.id,name:t.name,count:a.length,accuracy:recent.length?correct/recent.length:null,needsPractice:recent.length===0?true:recent.length<3||correct/recent.length<.8}})}
+export function nextExercise(attempts=[],currentId=null){const stats=skillStats(attempts),score=new Map(stats.map(s=>[s.id,(s.count===0?2:0)+(s.accuracy===null?0:(1-s.accuracy)*4)+Math.max(0,3-s.count)*.3]));const recentIds=attempts.slice(-3).map(a=>a.id);return [...exercises].filter(e=>e.id!==currentId).sort((a,b)=>(score.get(b.category)||0)-(score.get(a.category)||0)+(recentIds.includes(a.id)?2:0)-(recentIds.includes(b.id)?2:0)||a.id.localeCompare(b.id))[0]||exercises[0]}
+export function levelFor(topicId,attempts=[]){const a=attempts.filter(x=>x.topic===topicId).slice(-5);if(a.length>=5&&a.every(x=>x.correct&&!x.hintUsed))return "challenge";if(a.length>=3&&a.filter(x=>x.correct).length>=2)return "application";return "foundation"}
+export const unitPaths=[
+{id:"dose",title:"Dose-to-volume",target:"mL",tokens:[{id:"dose",text:"250 mg",numerator:"mg",denominator:null},{id:"inv",text:"1 mL / 50 mg",numerator:"mL",denominator:"mg"},{id:"wrong",text:"50 mg / 1 mL",numerator:"mg",denominator:"mL"}],solution:["dose","inv"],explain:"250 mg × (1 mL / 50 mg) = 5 mL. The mg units cancel."},
+{id:"infusion",title:"Infusion rate",target:"mL/h",tokens:[{id:"vol",text:"500 mL",numerator:"mL",denominator:null},{id:"time",text:"1 / 4 h",numerator:null,denominator:"h"},{id:"wrong",text:"4 h",numerator:"h",denominator:null}],solution:["vol","time"],explain:"500 mL × (1 / 4 h) = 125 mL/h."},
+{id:"weight",title:"Weight-based arithmetic",target:"mg",tokens:[{id:"mass",text:"70 kg",numerator:"kg",denominator:null},{id:"rate",text:"2 mg / kg",numerator:"mg",denominator:"kg"},{id:"wrong",text:"2 kg / mg",numerator:"kg",denominator:"mg"}],solution:["mass","rate"],explain:"70 kg × (2 mg/kg) = 140 mg. Kilograms cancel."},
+{id:"percent",title:"Percent w/v",target:"g",tokens:[{id:"vol",text:"250 mL",numerator:"mL",denominator:null},{id:"rate",text:"2 g / 100 mL",numerator:"g",denominator:"mL"},{id:"wrong",text:"100 mL / 2 g",numerator:"mL",denominator:"g"}],solution:["vol","rate"],explain:"250 mL × (2 g / 100 mL) = 5 g."}
+];
+export function checkPath(path,selected){return selected.length===path.solution.length&&selected.every((id,i)=>id===path.solution[i])}
