@@ -2,6 +2,12 @@
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
+## Version 10 follow-up — Backup integrity and test readiness
+- Added schema validation for imported study backups, including practice history, scheduled reviews, curriculum activity, and study-time constraints.
+- Invalid backup files are rejected before the confirmation step; existing local progress is not replaced.
+- Added backup-validation regression tests and included them in the unit-only test command.
+- GitHub's commit-status and pull-request workflow-run endpoints returned no status results for the prior release. This is **not** proof of passing tests. Browser testing and CI still need a confirmed run.
+
 ## New in Version 10 — Quality and Reliability
 - Chromium browser smoke tests for landing/navigation, curriculum interactions, practice answers, memory queue, clinical reasoning and generated math scenarios.
 - GitHub Actions installs Playwright and Chromium, then runs unit and browser tests on pushes and pull requests.
