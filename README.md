@@ -2,6 +2,13 @@
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
+## Version 11 Optimization Pass
+- Reviewed the existing application architecture, practice engine, local storage and CI.
+- Fixed missed-question review to use the latest recorded answer for each item instead of permanently retaining every previously missed item.
+- Unfinished practice sessions and selected answers now survive browser refresh; import validation checks active session structures.
+- Added unit and browser regression tests for these workflows and safe question indexing.
+- Remaining priorities: clinical expert verification, source-level citations, broader item bank, and refactoring the large app.js into modules.
+
 ## Version 11 — Practice Sessions
 - 18 new original educational questions spanning five content domains, with explanations and Review Needed status.
 - Short domain-filtered practice sessions, 5/10/20 target items, revisable selections and end-of-session review.
