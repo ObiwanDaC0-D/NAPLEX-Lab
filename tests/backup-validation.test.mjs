@@ -1,0 +1,6 @@
+import test from "node:test";import assert from "node:assert/strict";import {validateBackup} from "../src/backup-validation.js";
+const valid=()=>({version:1,data:{completed:["pk"],attempts:[{id:"q1",correct:true,at:1234}],reviews:{q1:{due:2345,interval:1,streak:1}},studyMinutes:60,conceptReviews:{raas:{due:3456,interval:3,streak:2}},curriculumAttempts:[{id:"raas",correct:false,at:1234}]}});
+test("accepts valid local backup and optional v9 fields",()=>{const r=validateBackup(valid());assert.equal(r.ok,true);assert.equal(r.data.studyMinutes,60)});
+test("rejects corrupt backups without modifying their content",()=>{for(const bad of [null,{}, {version:2,data:{}}, {version:1,data:null}])assert.equal(validateBackup(bad).ok,false)});
+test("rejects malformed attempts and review schedules",()=>{const a=valid();a.data.attempts[0].at="invalid";assert.equal(validateBackup(a).ok,false);const b=valid();b.data.reviews.q1.due="tomorrow";assert.equal(validateBackup(b).ok,false);const c=valid();c.data.conceptReviews.raas.streak=NaN;assert.equal(validateBackup(c).ok,false)});
+test("rejects invalid study minutes",()=>{for(const n of [-1,0,601,Infinity]){const a=valid();a.data.studyMinutes=n;assert.equal(validateBackup(a).ok,false)}});
