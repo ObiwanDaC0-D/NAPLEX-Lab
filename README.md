@@ -1,6 +1,13 @@
-# NAPLEX-Lab — Version 10.0
+# NAPLEX-Lab — Version 11.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
+
+## Version 11 — Practice Sessions
+- 18 new original educational questions spanning five content domains, with explanations and Review Needed status.
+- Short domain-filtered practice sessions, 5/10/20 target items, revisable selections and end-of-session review.
+- Domain summaries and local session history; session answers feed the existing review scheduler.
+- New unit and browser tests for the session workflow.
+- This is not an official or full-length NAPLEX simulation. The questions have not been independently clinically reviewed.
 
 ## CI compatibility repair
 - GitHub Actions logs identified a real failure: Playwright 1.56.1 could not install Chromium dependencies on the ubuntu26.04 runner selected by `ubuntu-latest`.
