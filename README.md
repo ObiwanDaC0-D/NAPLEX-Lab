@@ -1,8 +1,17 @@
-# NAPLEX-Lab — Version 8.0
+# NAPLEX-Lab — Version 9.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 8 — Connected Learning and Review Registry
+## New in Version 9 — Personalized Learning Dashboard
+- Fourteen-day activity visualization combining recorded question, math, clinical-case and curriculum attempts.
+- Connected knowledge-map cards in Performance Analytics with direct links to study each concept.
+- Curriculum concept spaced-review scheduling (1, 3, 7, 14, 30 days after successive correct checks; approximately one hour after an incorrect check).
+- Memory Lab now shows due curriculum concepts as well as due question cards.
+- Study Planner allocates available minutes across concept review, practice questions, calculation practice and reflection; suggests topics using recorded curriculum attempts.
+- All schedules and prioritization are simple transparent heuristics; they do not estimate exam readiness or validated retention probabilities.
+- New tests for activity aggregation, schedule intervals, study allocation and map references.
+
+## Preserved Version 8 — Connected Learning and Review Registry
 - Four Pharmacy Library views: Explore Modules, Knowledge Connections, Review Registry and Suggested Practice.
 - Explicit cross-links among curriculum concepts, related Drug Atlas entries, and monitoring themes.
 - Source-review registry for all ten curriculum modules; all are Review Needed with no assigned reviewer or verification date.
@@ -82,6 +91,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/clinical-cases.js`: original fictional clinical cases and practice questions
 - `src/curriculum.js`: structured pharmacotherapy pathways and original knowledge checks
 - `src/knowledge-map.js`: cross-topic links, review registry, and practice prioritization
+- `src/learning-dashboard.js`: activity summaries, concept scheduling and daily study allocation
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
