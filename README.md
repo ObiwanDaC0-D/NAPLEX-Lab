@@ -1,8 +1,16 @@
-# NAPLEX-Lab — Version 4.0
+# NAPLEX-Lab — Version 5.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
 
-## New in Version 4 — Adaptive Calculation Mastery
+## New in Version 5 — Adaptive Problem Generation
+- Reproducible numerical scenario generation for all 11 calculation models at Foundation, Application and Challenge levels (two numerical configurations per topic/level).
+- Switch between fixed practice exercises and generated scenarios; the existing adaptive topic selector remains optional.
+- Difficulty level for generated scenarios follows recent topic-specific correctness and hint use.
+- Topic-specific remediation guidance after incorrect answers.
+- Additional tests check all 66 topic-level-variant combinations against the underlying math engine.
+- Scenarios are curated parameter combinations, not unlimited random generation. Difficulty labels describe designed numerical complexity, not psychometrically calibrated challenge.
+
+## Preserved Version 4 — Adaptive Calculation Mastery
 - Optional adaptive practice selects the next existing question using a transparent, recent-accuracy and practice-count heuristic.
 - Foundation, Application and Challenge labels summarize recent answer patterns; they do not yet change problem complexity.
 - Interactive dimensional-analysis unit builder with four guided conversion-factor paths and immediate feedback.
@@ -48,6 +56,7 @@ In GitHub repository **Settings → Pages**, select **Deploy from a branch**, **
 - `src/drugs.js`: structured, explicitly unverified educational medication concepts
 - `src/math-lab.js`: pure mathematical models and guided exercise dataset
 - `src/adaptive-math.js`: adaptive heuristics and unit-builder exercises
+- `src/scenario-generator.js`: deterministic generated numerical scenarios and remediation
 - `tests/`: numerical and content-integrity tests
 - `.github/workflows/tests.yml`: Node test workflow
 
