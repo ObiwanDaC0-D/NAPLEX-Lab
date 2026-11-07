@@ -1,3 +1,11 @@
+# NAPLEX Lab
+
+NAPLEX Lab is a self-directed pharmacy learning and licensure-preparation application designed to strengthen conceptual understanding, pharmaceutical calculations, clinical reasoning, and exam readiness. Its curriculum, practice sessions, knowledge library, and evidence-status tracking help learners identify gaps and study deliberately. Educational content requires independent verification against authoritative current references; it is not a patient-care decision tool.
+
+**At a glance:** An interactive pharmacy education and NAPLEX preparation environment with clinical reasoning exercises, drug knowledge, calculations, adaptive practice, and progress review.
+
+---
+
 # NAPLEX-Lab — Version 12.0
 
 A local-first interactive pharmacy learning platform inspired by Wellness-Lab and Budhism-Psychology.
